@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Pegboard — Kanban Task Manager</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22><rect width=%2224%22 height=%2224%22 rx=%226%22 fill=%22%23E8A33D%22/><rect x=%223.6%22 y=%225.2%22 width=%224.6%22 height=%2214.6%22 rx=%221.7%22 fill=%22%231A1305%22 opacity=%220.55%22/><rect x=%229.7%22 y=%225.2%22 width=%224.6%22 height=%229%22 rx=%221.7%22 fill=%22%231A1305%22/><rect x=%2215.8%22 y=%225.2%22 width=%224.6%22 height=%2212%22 rx=%221.7%22 fill=%22%231A1305%22 opacity=%220.8%22/></svg>">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+
+<script>
+  // Set the theme before first paint so there's no dark/light flash on load.
+  (function () {
+    try {
+      var stored = localStorage.getItem("pegboard.theme.v1");
+      var theme =
+        stored === "light" || stored === "dark"
+          ? stored
+          : window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches
+          ? "light"
+          : "dark";
+      document.documentElement.setAttribute("data-theme", theme);
+    } catch (e) {}
+  })();
+</script>
+</head>
+<body>
+<div id="root"></div>
+<script type="module" src="/src/main.jsx"></script>
+</body>
+</html>
