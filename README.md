@@ -56,9 +56,3 @@ kanban-react/
 │       └── helpers.js         # constants, id/date helpers, seed data
 └── README.md
 ```
-
-## Customizing
-
-- Colors, fonts, spacing, and radii are CSS custom properties at the top of `src/index.css` under `:root` — change them there to re-theme the whole board.
-- Columns live in the `COLUMNS` array in `src/utils/helpers.js`; add a column by adding an entry there (e.g. `{ status: "review", title: "In Review" }`) — `Board.jsx` and the modal's column picker both read from it automatically.
-- First-run demo tasks are in `seedTasks()` in `src/utils/helpers.js` — delete or edit them, or just clear `localStorage` to reset.
